@@ -1,0 +1,19 @@
+name: Push image to ECR Registry | Rebuild docker image | Pull the image from ECR
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  login:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Rebuild the image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: false
+          tags: ecr-apache:latest
