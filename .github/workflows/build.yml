@@ -42,3 +42,4 @@ jobs:
         run: |
           docker tag ecr-apache $REGISTRY/$REPOSITORY:latest
           docker push $REGISTRY/$REPOSITORY:latest
+
