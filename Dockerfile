@@ -5,7 +5,7 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y apache2
 
 # Copy site files to container
-ADD /var/www/ecr-apache /var/www/html
+COPY . /var/www/html
 
 # Expose Port 80 for apache
 EXPOSE 80
