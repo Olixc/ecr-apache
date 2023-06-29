@@ -39,8 +39,8 @@ jobs:
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           REPOSITORY: ecr-apache
-          IMAGE_TAG: latest
+
         run: |
-          docker tag ecr-apache:$IMAGE_TAG $REGISTRY/$REPOSITORY:$IMAGE_TAG
-          docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+          docker tag ecr-apache  $REGISTRY/$REPOSITORY
+          docker push $REGISTRY/$REPOSITORY
 
